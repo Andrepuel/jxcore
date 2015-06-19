@@ -3,7 +3,6 @@ PROJECT(uv)
 
 SET(LIBUVDIR ${CMAKE_CURRENT_SOURCE_DIR})
 
-include_directories(${LIBUVDIR}/include ${LIBUVDIR}/src ${LIBUVDIR}/include/uv-private)
 set(SOURCES
   ${LIBUVDIR}/src/fs-poll.c
   ${LIBUVDIR}/src/inet.c
@@ -101,3 +100,4 @@ TARGET_LINK_LIBRARIES(uv
 "-framework ApplicationServices"
 )
 
+target_include_directories(uv PRIVATE ${LIBUVDIR}/include ${LIBUVDIR}/src ${LIBUVDIR}/include/uv-private)
